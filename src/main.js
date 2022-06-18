@@ -6,8 +6,8 @@ import {
   ReinhardToneMapping,
 } from "three";
 import { animate } from "./animate";
-import { fillLight, fillLigthHelper, keyLight, keyLightHelper } from "./ligths";
-import { cubes, leftCubes, rightCubes } from "./mesh";
+import { decoLight, decoLight2, fillLight, keyLight } from "./ligths";
+import { cubes, glassFigure, leftCubes, rightCubes } from "./mesh";
 
 const scene = new Scene();
 export const width = window.innerWidth;
@@ -26,9 +26,13 @@ document.body.appendChild(renderer.domElement);
 cubes.forEach((cube) => scene.add(cube));
 rightCubes.forEach((cube) => scene.add(cube));
 leftCubes.forEach((cube) => scene.add(cube));
+scene.add(glassFigure);
 scene.add(keyLight);
 //scene.add(keyLightHelper);
 scene.add(fillLight);
+scene.add(decoLight);
+scene.add(decoLight2);
+
 //scene.add(fillLigthHelper);
 //composer.addPass(new RenderPass(scene, camera));
-animate(cubes, leftCubes, rightCubes, renderer, scene, camera);
+animate(cubes, leftCubes, rightCubes, renderer, scene, camera, glassFigure);

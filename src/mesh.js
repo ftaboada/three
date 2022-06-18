@@ -1,5 +1,11 @@
-import { BoxGeometry, Mesh } from "three";
-import { baseMaterial, glowMaterial } from "./materials";
+import { OctahedronGeometry } from "three";
+import { BoxGeometry, Mesh, TorusKnotGeometry } from "three";
+import {
+  baseMaterial,
+  glassMaterial,
+  glowMaterial,
+  glassMaterial2,
+} from "./materials";
 
 export const initialPosition = -145;
 const geometry = new BoxGeometry(8, 0.3, 3);
@@ -10,7 +16,11 @@ const calculateZ = (initialPosition, indexPosition, separation) => {
 const createCube = (indexPosition, separation, y = 3.5) => {
   const newCube = new Mesh(
     geometry,
-    indexPosition % 15 === 0 ? glowMaterial : baseMaterial
+    indexPosition % 15 === 0
+      ? glowMaterial
+      : indexPosition % 5 === 0
+      ? glassMaterial
+      : baseMaterial
   );
   newCube.position.y -= y;
   newCube.position.z = calculateZ(initialPosition, indexPosition, separation);
@@ -48,3 +58,9 @@ export const rightCubes = createSideBoxes(
   triangleSpace,
   false
 );
+//const ochtaGeometry = new OctahedronGeometry();
+const torus = new TorusKnotGeometry(0.7, 0.26, 124, 25, 2, 1);
+export const glassFigure = new Mesh(torus, glassMaterial2);
+glassFigure.position.set(0, 0, -30);
+glassFigure.castShadow = true;
+glassFigure.receiveShadow = true;
