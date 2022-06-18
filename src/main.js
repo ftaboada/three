@@ -35,4 +35,7 @@ scene.add(decoLight2);
 
 //scene.add(fillLigthHelper);
 //composer.addPass(new RenderPass(scene, camera));
+const song = new Audio("song.mp3");
+song.play();
+song.loop = true;
 animate(cubes, leftCubes, rightCubes, renderer, scene, camera, glassFigure);

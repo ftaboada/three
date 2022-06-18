@@ -59,8 +59,8 @@ export const rightCubes = createSideBoxes(
   false
 );
 //const ochtaGeometry = new OctahedronGeometry();
-const torus = new TorusKnotGeometry(0.7, 0.26, 124, 25, 2, 1);
+const torus = new TorusKnotGeometry(0.8, 0.36, 124, 25, 2, 1);
 export const glassFigure = new Mesh(torus, glassMaterial2);
-glassFigure.position.set(0, 0, -30);
+glassFigure.position.set(0, 0, -15);
 glassFigure.castShadow = true;
 glassFigure.receiveShadow = true;

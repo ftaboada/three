@@ -30,11 +30,15 @@ export const animate = (
   rightCubes.forEach((cube) => {
     cubeMoves(cube, speed);
   });
+  if (glassFigure.position.z < -100) {
+    glassFigure.position.z = 1;
+  }
   camera.rotation.z += 0.02 * factor;
   speed += 0.0001;
-  glassFigure.rotation.z += 0.05;
-  glassFigure.rotation.y += -0.001;
-  glassFigure.rotation.x += 0.003;
+  glassFigure.rotation.z += -0.005;
+  glassFigure.rotation.y += -0.05;
+  glassFigure.rotation.x += 0.001;
+  glassFigure.position.z += -0.042;
   requestAnimationFrame(() =>
     animate(cubes, leftCubes, rightCubes, renderer, scene, camera, glassFigure)
   );
