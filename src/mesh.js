@@ -58,7 +58,6 @@ export const rightCubes = createSideBoxes(
   triangleSpace,
   false
 );
-//const ochtaGeometry = new OctahedronGeometry();
 const torus = new TorusKnotGeometry(0.8, 0.36, 124, 25, 2, 1);
 export const glassFigure = new Mesh(torus, glassMaterial2);
 glassFigure.position.set(0, 0, -15);

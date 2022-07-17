@@ -3,7 +3,6 @@ import { MeshPhongMaterial } from "three";
 import { MeshStandardMaterial, TextureLoader, Color } from "three";
 
 const textureLoader = new TextureLoader();
-const normalTexture = textureLoader.load("normal.jpg");
 export const baseMaterial = new MeshStandardMaterial();
 baseMaterial.metalness = 1;
 baseMaterial.roughness = 1;
