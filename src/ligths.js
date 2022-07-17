@@ -1,5 +1,8 @@
-import { PointLightHelper } from "three";
-import { PointLight, SpotLight, SpotLightHelper, HemisphereLight } from "three";
+// add the imports to use the helpers
+import {
+  PointLight,
+  SpotLight /*SpotLightHelper, HemisphereLight*/,
+} from "three";
 
 export const keyLight = new SpotLight(0xe57ecf, 1);
 keyLight.position.set(0, -20, -30);
